@@ -15,7 +15,5 @@ export default {
 </script>
 
 <style lang="scss">
-  .hero {
-    font-weight: bold;
-  }
+
 </style>
