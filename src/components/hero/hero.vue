@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="hero">
     {{ health }}
   </div>
 </template>
@@ -15,5 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .hero {
+    font-weight: bold;
+  }
 </style>
