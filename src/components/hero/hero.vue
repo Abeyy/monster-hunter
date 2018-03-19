@@ -1,12 +1,15 @@
 <template>
-  <Hero></Hero>
+  <div class="">
+    {{ health }}
+  </div>
 </template>
 
 <script>
-  import Hero from './components/hero/hero.vue'
 export default {
-  components: {
-    Hero: Hero
+  data() {
+    return {
+        health: 100
+    }
   }
 }
 </script>
