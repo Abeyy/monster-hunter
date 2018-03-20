@@ -15,9 +15,6 @@ export default {
         health: 100
     }
   },
-  mounted: {
-
-  },
   components: {
 
   },
