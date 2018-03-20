@@ -1,6 +1,11 @@
 <template>
   <div class="hero">
     {{ health }}
+    <div class="outer-health-bar">
+      <div class="inner-health-bar" v-bind:style="healthStyle">
+
+      </div>
+    </div>
     {{ status }}
     <button v-on:click="incrementHealth(10)">Heal</button>
     <button v-on:click="decrementHealth(10)">Take Damage</button>
@@ -13,14 +18,18 @@ export default {
   data() {
     return {
         status: "alive",
-        health: 100
+        health: 100,
     }
   },
   components: {
 
   },
   computed: {
-
+    healthStyle() {
+      return {
+        width: this.health + '%'
+      }
+    }
   },
   methods: {
     incrementHealth(val) {
@@ -67,6 +76,13 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
+<style scoped>
+  .outer-health-bar {
+    border: 1px solid black;
+    height: 10px;
+  }
+  .inner-health-bar {
+    height: 100%;
+    background: red;
+  }
 </style>
