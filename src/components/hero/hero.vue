@@ -14,6 +14,7 @@
 </template>
 
 <script>
+// TODO: Poison status toggle is bugged!
 export default {
   data() {
     return {
@@ -78,6 +79,7 @@ export default {
 
 <style scoped>
   .outer-health-bar {
+    width: 300px;
     border: 1px solid black;
     height: 10px;
   }
