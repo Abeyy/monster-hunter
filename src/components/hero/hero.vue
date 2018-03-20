@@ -27,8 +27,12 @@ export default {
   },
   computed: {
     healthStyle() {
+      let color
+      if (this.status == "alive") color = 'red'
+      if (this.status == "poisoned") color = 'green'
       return {
-        width: this.health + '%'
+        width: this.health + '%',
+        background: color
       }
     }
   },
@@ -58,7 +62,7 @@ export default {
       if(this.status == "poisoned") {
         let poisonCount = setInterval(function (){
           self.health = self.health - 1
-          if (self.status == "dead" || self.health <= 0) {
+          if (self.status == "dead" || self.status == "alive" || self.health <= 0) {
             clearInterval(poisonCount)
           }
         }, 1000)
@@ -68,7 +72,7 @@ export default {
       if (this.health <= 0) {
         this.status = "dead"
       }
-      if (this.health > 0) {
+      if (this.health > 0 && this.status != "poisoned") {
         this.status = "alive"
       }
     }
