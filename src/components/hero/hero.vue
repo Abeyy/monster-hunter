@@ -1,12 +1,13 @@
 <template>
   <div class="hero">
-    {{ health }}
+     <span> Current Health: {{ health }} </span>
+    <span> Max Health: {{ max_health }}</span>
     <div class="outer-health-bar">
       <div class="inner-health-bar" v-bind:style="healthStyle">
 
       </div>
     </div>
-    {{ status }}
+    <span> Status: {{ status }} </span>
     <button v-on:click="incrementHealth(10)">Heal</button>
     <button v-on:click="decrementHealth(10)">Take Damage</button>
     <button v-on:click="togglePoison">Poison</button>
@@ -20,6 +21,7 @@ export default {
     return {
         status: "alive",
         health: 100,
+        max_health: 110
     }
   },
   components: {
@@ -31,13 +33,16 @@ export default {
       if (this.status == "alive") color = 'red'
       if (this.status == "poisoned") color = 'green'
       return {
-        width: this.health + '%',
+        width: (this.health/this.max_health)*100 + '%',
         background: color
       }
     }
   },
   methods: {
     incrementHealth(val) {
+      if (this.health + val > this.max_health) {
+        return this.health = this.max_health
+      }
       this.health = this.health + val
     },
     decrementHealth(val) {
