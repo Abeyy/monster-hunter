@@ -18,16 +18,28 @@
 // TODO: Poison status toggle is bugged!
 export default {
   data() {
-    return {
-        status: "alive",
-        health: 100,
-        max_health: 110
-    }
+    return {}
   },
   components: {
 
   },
   computed: {
+    health() {
+      return this.$store.state.health
+    },
+    max_health() {
+      return this.$store.state.max_health
+    },
+    status() {
+      return this.$store.state.status
+    },
+    isAlive() {
+      if (this.health > 0) return true
+      return false
+    },
+    isPoisoned() {
+      return this.$store.state.status == "poisoned"
+    },
     healthStyle() {
       let color
       if (this.status == "alive") color = 'red'
@@ -40,50 +52,35 @@ export default {
   },
   methods: {
     incrementHealth(val) {
-      if (this.health + val > this.max_health) {
-        return this.health = this.max_health
-      }
-      this.health = this.health + val
+      this.$store.commit('heal', val)
     },
     decrementHealth(val) {
-      if (this.status == "dead") return
-
-      this.health = this.health - val
-      if (this.health <= 0) {
-        this.status = 'dead'
-      }
+      this.$store.commit('damage', val)
     },
     togglePoison(val) {
-      if (this.status == "alive") {
-        return this.status = "poisoned"
+      if (this.$store.state.status == "poisoned") {
+         return this.$store.state.status = "alive"
       }
+      this.$store.state.status = "poisoned"
 
-      return this.status = "alive"
     }
   },
   watch: {
-    status() {
+    isPoisoned() {
       let self = this
       if(this.status == "poisoned") {
         let poisonCount = setInterval(function (){
-          self.health = self.health - 1
+          self.$store.commit("damage", 1)
           if (self.status == "dead" || self.status == "alive" || self.health <= 0) {
             clearInterval(poisonCount)
           }
         }, 1000)
       }
-    },
-    health() {
-      if (this.health <= 0) {
-        this.status = "dead"
-      }
-      if (this.health > 0 && this.status != "poisoned") {
-        this.status = "alive"
-      }
     }
   }
 
 }
+
 </script>
 
 <style scoped>
