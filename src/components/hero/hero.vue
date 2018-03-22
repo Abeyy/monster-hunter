@@ -9,7 +9,7 @@
     </div>
     <span> Status: {{ status }} </span>
     <button v-on:click="incrementHealth(10)">Heal</button>
-    <button v-on:click="decrementHealth(10)">Take Damage</button>
+    <button v-on:click="dealDamage(10)">Deal Damage</button>
     <button v-on:click="togglePoison">Poison</button>
   </div>
 </template>
@@ -33,6 +33,9 @@ export default {
     status() {
       return this.$store.state.status
     },
+    power() {
+      return this.$store.state.power
+    },
     isAlive() {
       if (this.health > 0) return true
       return false
@@ -54,8 +57,8 @@ export default {
     incrementHealth(val) {
       this.$store.commit('heal', val)
     },
-    decrementHealth(val) {
-      this.$store.commit('damage', val)
+    dealDamage(power) {
+      this.$store.commit('dealDamage', power)
     },
     togglePoison(val) {
       if (this.$store.state.status == "poisoned") {
@@ -66,11 +69,18 @@ export default {
     }
   },
   watch: {
+    isAlive() {
+      if(this.isAlive) {
+        return this.$store.commit('changeStatus', 'alive')
+      }
+
+      return this.$store.commit('changeStatus', 'dead')
+    },
     isPoisoned() {
       let self = this
       if(this.status == "poisoned") {
         let poisonCount = setInterval(function (){
-          self.$store.commit("damage", 1)
+          self.$store.commit("damageHero", 1)
           if (self.status == "dead" || self.status == "alive" || self.health <= 0) {
             clearInterval(poisonCount)
           }
