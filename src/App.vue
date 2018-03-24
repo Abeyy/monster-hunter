@@ -1,7 +1,13 @@
 <template>
   <div>
-    <Hero></Hero>
-    <Basicmon></Basicmon>
+
+    <div class="hero-area">
+        <Hero></Hero>
+    </div>
+
+    <div class="monster-area">
+        <Basicmon></Basicmon>
+    </div>
   </div>
 </template>
 
@@ -17,5 +23,8 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .hero-area, .monster-area {
+    width: 49%;
+    display: inline-block;
+  }
 </style>
