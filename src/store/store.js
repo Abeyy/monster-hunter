@@ -17,6 +17,9 @@ const store = new Vuex.Store({
     current_monster_status: 'alive',
     current_monster_damage: undefined,
     current_monster_drops: undefined,
+
+    //Views
+    current_view: 'mainMenu'
   },
   getters: {
 
@@ -66,6 +69,9 @@ const store = new Vuex.Store({
     },
     set_current_monster_drops: (state, drops ) => {
       state.current_monster_drops = drops
+    },
+    set_current_view: (state, view) => {
+      state.current_view = view
     }
   }
 })
