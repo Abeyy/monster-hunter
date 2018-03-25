@@ -1,14 +1,19 @@
 <template>
   <div>
-    <Hero :message="message"></Hero>
-    <Monster></Monster>
+    <div class="hero-area">
+        <Hero></Hero>
+    </div>
+
+    <div class="monster-area">
+        <Basicmon></Basicmon>
+    </div>
   </div>
 </template>
 
 <script>
 
 import Hero from '../hero/hero.vue'
-import Monster from '../monsters/basicmon.vue'
+import Basicmon from '../monsters/basicmon.vue'
 
 export default {
   data() {
@@ -21,12 +26,15 @@ export default {
   },
   components: {
     Hero: Hero,
-    Monster: Monster
+    Basicmon: Basicmon
   }
 }
 
 </script>
 
-<style lang="scss">
-
+<style scoped lang="scss">
+  .hero-area, .monster-area {
+    width: 49%;
+    display: inline-block;
+  }
 </style>
