@@ -9,7 +9,7 @@
         </div>
       </div>
       <span> Status: {{ status }} </span>
-      <button v-on:click="dealDamage()"> Deal 10</button>
+      <button v-on:click="dealDamage()"> Deal 15</button>
     </div>
 
   </div>
