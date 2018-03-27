@@ -5,7 +5,8 @@
     </div>
 
     <div class="monster-area">
-        <Basicmon></Basicmon>
+        <!-- <Basicmon></Basicmon> -->
+        <Monster></Monster>
     </div>
   </div>
 </template>
@@ -14,6 +15,7 @@
 
 import Hero from '../hero/hero.vue'
 import Basicmon from '../monsters/basicmon.vue'
+import Monster from '../monsters/monster.vue'
 
 export default {
   data() {
@@ -26,7 +28,8 @@ export default {
   },
   components: {
     Hero: Hero,
-    Basicmon: Basicmon
+    Basicmon: Basicmon,
+    Monster: Monster
   }
 }
 
