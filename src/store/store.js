@@ -5,8 +5,11 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     // Hero
+    level: 1,
+    exp: 0,
+    exp_to_next_lvl: 100,
     health: 100,
-    max_health: 110,
+    max_health: 100,
     power: 10,
     status: 'alive',
 
