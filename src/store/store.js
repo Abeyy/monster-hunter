@@ -27,7 +27,7 @@ const store = new Vuex.Store({
   mutations: {
     heal: (state, value) => {
       if(state.health + value > state.max_health) {
-        return state.max_health
+        return state.health = state.max_health
       }
       state.health = state.health + value
     },
