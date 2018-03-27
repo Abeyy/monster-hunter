@@ -77,7 +77,6 @@ export default {
       this.$store.commit('set_current_monster_damage', monster.damage)
     },
     setNewMonster() {
-      // let monsterNames = Object.keys(monstersList)
       this.monsterNames.map((monster) => {
         if (this.slainMonsters.indexOf(monster) > -1) {
           let index = this.monsterNames.indexOf(monster)
