@@ -7,7 +7,7 @@ const store = new Vuex.Store({
     // Hero
     level: 1,
     exp: 0,
-    exp_to_next_lvl: 100,
+    max_exp: 100,
     health: 100,
     max_health: 100,
     power: 10,
@@ -19,6 +19,7 @@ const store = new Vuex.Store({
     current_monster_max_health: undefined,
     current_monster_status: 'alive',
     current_monster_damage: undefined,
+    current_monster_experience: undefined,
     current_monster_drops: undefined,
 
     //Views
@@ -55,6 +56,18 @@ const store = new Vuex.Store({
     changeStatus: (state, newStatus) => {
       state.status = newStatus
     },
+    giveExp: (state, exp) => {
+      if (state.exp + exp > state.max_exp) {
+        //TODO: The below is broken! 
+        state.exp = (state.exp + exp) - state.max_exp
+        state.level += 1
+        state.power += 5
+        state.max_exp = (state.level * 150)
+      } else {
+        state.exp = state.exp + exp
+      }
+
+    },
     set_current_monster_name: (state, name) => {
       state.current_monster_name = name
     },
@@ -69,6 +82,9 @@ const store = new Vuex.Store({
     },
     set_current_monster_damage: (state, damage) => {
       state.current_monster_damage = damage
+    },
+    set_current_monster_experience: (state, experience) => {
+      state.current_monster_experience = experience
     },
     set_current_monster_drops: (state, drops ) => {
       state.current_monster_drops = drops

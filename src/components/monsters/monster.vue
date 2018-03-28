@@ -14,6 +14,8 @@
 
       <span>  Slain: {{ slainMonsters }}</span>
       <span> Monsters List:  {{ monsterNames }}</span>
+
+      exp: {{ experience }}
     </div>
 
   </div>
@@ -46,6 +48,9 @@ export default {
     damage() {
       return this.$store.state.current_monster_damage
     },
+    experience() {
+      return this.$store.state.current_monster_experience
+    },
     monsterNames() {
       return Object.keys(monstersList)
     },
@@ -68,6 +73,7 @@ export default {
         this.$store.commit('set_current_monster_max_health', 50)
         this.$store.commit('set_current_monster_health', 50)
         this.$store.commit('set_current_monster_damage', 15)
+        this.$store.commit('set_current_monster_experience', 15)
         return
       }
       this.$store.commit('set_current_monster_name', monster.name)
@@ -75,6 +81,7 @@ export default {
       this.$store.commit('set_current_monster_max_health', monster.max_health)
       this.$store.commit('set_current_monster_health', monster.health)
       this.$store.commit('set_current_monster_damage', monster.damage)
+      this.$store.commit('set_current_monster_experience', monster.experience)
     },
     setNewMonster() {
       this.monsterNames.map((monster) => {
@@ -88,11 +95,15 @@ export default {
     },
     dealDamage() {
       this.$store.commit('damageHero', this.damage)
+    },
+    giveExp() {
+      this.$store.commit('giveExp', this.experience)
     }
   },
   watch: {
     status() {
       if (this.status == 'dead') {
+        this.giveExp()
         this.slainMonsters.push(this.name)
         this.setNewMonster()
       }

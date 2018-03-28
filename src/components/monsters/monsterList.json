@@ -1,11 +1,43 @@
 {
-  "Basicmon": {
+  "Basicmon0": {
     "name": "Basicmon",
     "max_health": "50",
     "health": 50,
     "damage": 15,
     "statusEffects": "",
-    "experience": 10
+    "experience": 50
+  },
+  "Basicmon1": {
+    "name": "Basicmon",
+    "max_health": "50",
+    "health": 50,
+    "damage": 15,
+    "statusEffects": "",
+    "experience": 50
+  },
+  "Basicmon2": {
+    "name": "Basicmon",
+    "max_health": "50",
+    "health": 50,
+    "damage": 15,
+    "statusEffects": "",
+    "experience": 50
+  },
+  "Basicmon3": {
+    "name": "Basicmon",
+    "max_health": "50",
+    "health": 50,
+    "damage": 15,
+    "statusEffects": "",
+    "experience": 50
+  },
+  "Basicmon4": {
+    "name": "Basicmon",
+    "max_health": "50",
+    "health": 50,
+    "damage": 15,
+    "statusEffects": "",
+    "experience": 50
   },
   "Pumpkino": {
     "name": "Pumpkino",
@@ -13,7 +45,7 @@
     "health": 20,
     "damage": 50,
     "statusEffects": "",
-    "experience": 20
+    "experience": 100
   },
   "Reaper": {
     "name": "Reaper",
@@ -21,6 +53,6 @@
     "health": 100,
     "damage": 100,
     "statusEffects": "",
-    "experience": 20
+    "experience": 200
   }
 }

@@ -2,11 +2,13 @@
   <div class="hero">
      <span> Current Health: {{ health }} </span>
     <span> Max Health: {{ max_health }}</span>
+    <span> Current Level: {{ level }}</span>
     <div class="outer-health-bar">
       <div class="inner-health-bar" v-bind:style="healthStyle">
 
       </div>
     </div>
+    <span> EXP: {{ experience }} // Max EXP: {{ max_exp }}</span>
     <span> Status: {{ status }} </span>
     <button v-on:click="incrementHealth(10)">Heal</button>
     <button v-on:click="dealDamage(10)">Deal Damage</button>
@@ -29,6 +31,15 @@ export default {
     },
     max_health() {
       return this.$store.state.max_health
+    },
+    level() {
+      return this.$store.state.level
+    },
+    experience() {
+      return this.$store.state.exp
+    },
+    max_exp() {
+      return this.$store.state.max_exp
     },
     status() {
       return this.$store.state.status
