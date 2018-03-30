@@ -1,13 +1,18 @@
 <template>
   <div>
-    <div class="hero-area">
-        <Hero></Hero>
-    </div>
-
     <div class="monster-area">
-        <!-- <Basicmon></Basicmon> -->
         <Monster></Monster>
     </div>
+
+    <div class="hero-dashboard">
+      <div class="divider-bar">
+      </div>
+      <div class="hero-area ">
+          <Hero></Hero>
+      </div>
+    </div>
+
+
   </div>
 </template>
 
@@ -38,11 +43,18 @@ export default {
 <style scoped lang="scss">
   .hero-area {
     position: absolute;
-    bottom: 0;
     left: 25%;
+    width: 50%;
   }
-  .hero-area, .monster-area {
-    width: 49%;
-    display: inline-block;
+
+  .divider-bar {
+    width: 100%;
+    border-top: 5px solid grey;
+  }
+  .hero-dashboard {
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+    // background: black;
   }
 </style>

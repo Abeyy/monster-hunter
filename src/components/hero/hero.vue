@@ -1,8 +1,11 @@
 <template>
   <div class="hero">
-     <span> Current Health: {{ health }} </span>
-    <span> Max Health: {{ max_health }}</span>
-    <span> Current Level: {{ level }}</span>
+    <div class="hero-stats">
+      <span> Current Health: {{ health }} </span>
+      <span> Max Health: {{ max_health }}</span>
+      <span> Current Level: {{ level }}</span>
+    </div>
+
     <div class="outer-health-bar">
       <div class="inner-health-bar" v-bind:style="healthStyle">
 
@@ -105,10 +108,12 @@ export default {
 </script>
 
 <style scoped>
+  @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
   .outer-health-bar {
     width: 100%;
     border: 1px solid black;
-    height: 10px;
+    height: 25px !important;
+    border-radius: 5px;
   }
   .inner-health-bar {
     height: 100%;
