@@ -1,5 +1,5 @@
 {
-  "Basicmon0": {
+  "Basicmon": {
     "name": "Basicmon",
     "max_health": "50",
     "health": 50,
@@ -8,36 +8,20 @@
     "experience": 50
   },
   "Basicmon1": {
-    "name": "Basicmon",
+    "name": "Basicmon1",
     "max_health": "50",
     "health": 50,
     "damage": 15,
     "statusEffects": "",
     "experience": 50
   },
-  "Basicmon2": {
-    "name": "Basicmon",
-    "max_health": "50",
-    "health": 50,
-    "damage": 15,
+  "Pumpkino123": {
+    "name": "Pumpkino123",
+    "max_health": 20,
+    "health": 20,
+    "damage": 50,
     "statusEffects": "",
-    "experience": 50
-  },
-  "Basicmon3": {
-    "name": "Basicmon",
-    "max_health": "50",
-    "health": 50,
-    "damage": 15,
-    "statusEffects": "",
-    "experience": 50
-  },
-  "Basicmon4": {
-    "name": "Basicmon",
-    "max_health": "50",
-    "health": 50,
-    "damage": 15,
-    "statusEffects": "",
-    "experience": 50
+    "experience": 100
   },
   "Pumpkino": {
     "name": "Pumpkino",

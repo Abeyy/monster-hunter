@@ -68,6 +68,7 @@ export default {
     initializeMonster(monster) {
       if (!this.$store.state.current_monster_name) {
         //TODO: Should not be basicmons stats being preloaded
+        console.log('NOTTT supposed to be here')
         this.$store.commit('set_current_monster_name', 'Basicmon')
         this.$store.commit('set_current_monster_status', 'alive')
         this.$store.commit('set_current_monster_max_health', 50)
@@ -76,6 +77,7 @@ export default {
         this.$store.commit('set_current_monster_experience', 15)
         return
       }
+      console.log('supposed to be here')
       this.$store.commit('set_current_monster_name', monster.name)
       this.$store.commit('set_current_monster_status', monster.status)
       this.$store.commit('set_current_monster_max_health', monster.max_health)

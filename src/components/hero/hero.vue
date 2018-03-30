@@ -106,12 +106,15 @@ export default {
 
 <style scoped>
   .outer-health-bar {
-    width: 300px;
+    width: 100%;
     border: 1px solid black;
     height: 10px;
   }
   .inner-health-bar {
     height: 100%;
     background: red;
+  }
+  .hero {
+    bottom: 0;
   }
 </style>

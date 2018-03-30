@@ -36,6 +36,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  .hero-area {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+  }
   .hero-area, .monster-area {
     width: 49%;
     display: inline-block;
