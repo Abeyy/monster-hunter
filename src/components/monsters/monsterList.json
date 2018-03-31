@@ -36,7 +36,7 @@
     "experience": 100
   },
   "FINAL BOSS: Reaper": {
-    "name": "Reaper",
+    "name": "FINAL BOSS: Reaper",
     "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/finalboss1.gif?alt=media&token=e31cd6ac-9fcb-4a11-a221-c3ca7747cbfb",
     "max_health": 100,
     "health": 100,

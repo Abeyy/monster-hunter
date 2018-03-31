@@ -91,7 +91,7 @@ export default {
         }
       })
 
-      if (this.monsterNames.length > 1) {
+      if (this.monsterNames.length > 0) {
         this.initializeMonster(monstersList[this.monsterNames[0]])
       } else {
         this.$store.commit('set_current_view', 'winScreen')
