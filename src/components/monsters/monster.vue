@@ -66,7 +66,7 @@ export default {
         //TODO: Should not be basicmons stats being preloaded
         console.log('NOTTT supposed to be here')
         this.$store.commit('set_current_monster_name', 'Basicmon')
-        this.$store.commit('set_current_monster_image', 'https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/basicmon.gif?alt=media&token=1a1105aa-6c40-4db1-9bb8-123c8462f591')
+        this.$store.commit('set_current_monster_image', 'https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/basicmon.gif?alt=media&token=5863f184-ce00-4a0d-b3d2-01d3d222f9ee')
         this.$store.commit('set_current_monster_status', 'alive')
         this.$store.commit('set_current_monster_max_health', 50)
         this.$store.commit('set_current_monster_health', 50)

@@ -132,7 +132,7 @@ export default {
 
   .hero {
     bottom: 0;
-    background: url('../../assets/wood.jpg');
+    background: url("https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/wood.jpg?alt=media&token=a58c4c91-8ef4-42d7-91f5-8954376a34f5");
     background-size: 100%;
   }
 
