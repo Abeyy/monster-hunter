@@ -1,7 +1,7 @@
 {
   "Raptar": {
     "name": "Raptar",
-    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/basicmon.gif?alt=media&token=1a1105aa-6c40-4db1-9bb8-123c8462f591",
+    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/basicmon.gif?alt=media&token=5863f184-ce00-4a0d-b3d2-01d3d222f9ee",
     "max_health": "50",
     "health": 50,
     "damage": 15,
@@ -10,7 +10,7 @@
   },
   "Raptar": {
     "name": "Raptar",
-    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/basicmon.gif?alt=media&token=1a1105aa-6c40-4db1-9bb8-123c8462f591",
+    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/basicmon.gif?alt=media&token=5863f184-ce00-4a0d-b3d2-01d3d222f9ee",
     "max_health": "50",
     "health": 50,
     "damage": 15,
