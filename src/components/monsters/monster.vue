@@ -1,21 +1,14 @@
 <template>
   <div>
-    <div class="hero">
-      <span> Name: {{ name }}</span>
-       <span> Current Health: {{ health }} </span>
-      <span> Max Health: {{ max_health }}</span>
-      <div class="outer-health-bar">
-        <div class="inner-health-bar" v-bind:style="healthStyle">
-
-        </div>
-      </div>
-      <span> Status: {{ status }} </span>
+    <div class="monster col-s-6 col-md-3 col-lg-3 col-xl-3">
       <button v-on:click="dealDamage()"> Deal 15</button>
+      <div class="monster-name"> {{ name }}</div>
+      <div class="outer-health-bar monster">
+        <div class="inner-health-bar" v-bind:style="healthStyle"></div>
+      </div>
+      <img class="monster-image" :src="image">
 
-      <span>  Slain: {{ slainMonsters }}</span>
-      <span> Monsters List:  {{ monsterNames }}</span>
 
-      exp: {{ experience }}
     </div>
 
   </div>
@@ -35,6 +28,9 @@ export default {
   computed: {
     name() {
       return this.$store.state.current_monster_name
+    },
+    image() {
+      return this.$store.state.current_monster_image
     },
     health() {
       return this.$store.state.current_monster_health
@@ -70,6 +66,7 @@ export default {
         //TODO: Should not be basicmons stats being preloaded
         console.log('NOTTT supposed to be here')
         this.$store.commit('set_current_monster_name', 'Basicmon')
+        this.$store.commit('set_current_monster_image', 'https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/basicmon.gif?alt=media&token=1a1105aa-6c40-4db1-9bb8-123c8462f591')
         this.$store.commit('set_current_monster_status', 'alive')
         this.$store.commit('set_current_monster_max_health', 50)
         this.$store.commit('set_current_monster_health', 50)
@@ -79,6 +76,7 @@ export default {
       }
       console.log('supposed to be here')
       this.$store.commit('set_current_monster_name', monster.name)
+      this.$store.commit('set_current_monster_image', monster.image)
       this.$store.commit('set_current_monster_status', monster.status)
       this.$store.commit('set_current_monster_max_health', monster.max_health)
       this.$store.commit('set_current_monster_health', monster.health)
@@ -93,7 +91,11 @@ export default {
         }
       })
 
-      this.initializeMonster(monstersList[this.monsterNames[0]])
+      if (this.monsterNames.length > 1) {
+        this.initializeMonster(monstersList[this.monsterNames[0]])
+      } else {
+        this.$store.commit('set_current_view', 'winScreen')
+      }
     },
     dealDamage() {
       this.$store.commit('damageHero', this.damage)
@@ -115,13 +117,26 @@ export default {
 </script>
 
 <style lang="scss">
-  .outer-health-bar {
-    width: 300px;
+  .outer-health-bar.monster {
+    margin-left: 25%;
+    width: 200px;
     border: 1px solid black;
-    height: 10px;
+    height: 15px;
   }
   .inner-health-bar {
     height: 100%;
     background: red;
+  }
+  .monster-name {
+    color: white;
+    margin-left: 60%;
+    font-size: 26px;
+  }
+  .monster button{
+    width: 100px;
+    margin-left: 60%;
+  }
+  .monster-image {
+    height: 250px;
   }
 </style>

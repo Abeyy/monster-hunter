@@ -1,21 +1,29 @@
 <template>
-  <div class="hero">
-    <div class="hero-stats">
-      <span> Current Health: {{ health }} </span>
-      <span> Max Health: {{ max_health }}</span>
-      <span> Current Level: {{ level }}</span>
+  <div class="hero row">
+    <div class="hero-stats-left col-s-3 col-md-3 col-lg-3 col-xl-3">
+      <div> Current Level: {{ level }}</div>
+      <div> Health: {{ health }} / {{ max_health }}</div>
+      <div> Mana: </div>
+      <div> Experience: {{ experience}} / {{ max_exp}} </div>
+
     </div>
 
-    <div class="outer-health-bar">
-      <div class="inner-health-bar" v-bind:style="healthStyle">
+    <div class="col-s-6 col-md-6 col-lg-6 col-xl-6">
+      <div class="outer-health-bar">
+        <div class="inner-health-bar" v-bind:style="healthStyle">
 
+        </div>
       </div>
     </div>
-    <span> EXP: {{ experience }} // Max EXP: {{ max_exp }}</span>
-    <span> Status: {{ status }} </span>
-    <button v-on:click="incrementHealth(10)">Heal</button>
-    <button v-on:click="dealDamage(10)">Deal Damage</button>
-    <button v-on:click="togglePoison">Poison</button>
+
+    <div class="hero-stats-right col-s-3 col-md-3 col-lg-3 col-xl-3">
+      <div> Status: {{ status }} </div>
+      <div> Attack Power: {{ power }} </div>
+      <div> Ability Power: {{ }} </div>
+      <button class="btn-success" v-on:click="incrementHealth(10)">Heal</button>
+      <button class="btn-danger" v-on:click="dealDamage(10)">Deal Damage</button>
+      <button class="btn-warning" v-on:click="togglePoison">Poison</button>
+    </div>
   </div>
 </template>
 
@@ -108,18 +116,37 @@ export default {
 </script>
 
 <style scoped>
-  @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
   .outer-health-bar {
+    border: 2px solid black;
+    height: 35px !important;
+    border-radius: 10px;
     width: 100%;
-    border: 1px solid black;
-    height: 25px !important;
-    border-radius: 5px;
+    margin-top: 10px;
   }
+
   .inner-health-bar {
     height: 100%;
     background: red;
+    border-radius: 10px;
   }
+
   .hero {
     bottom: 0;
+    background: url('../../assets/wood.jpg');
+    background-size: 100%;
+  }
+
+  .hero-stats-left{
+    color: white;
+    margin-top: 10px;
+    padding: 15px 0px 15px 30px;
+    font-size: 20px;
+  }
+
+  .hero-stats-right{
+    font-size: 20px;
+    color: white;
+    padding: 15px;
+    text-transform: capitalize;
   }
 </style>

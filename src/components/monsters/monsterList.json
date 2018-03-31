@@ -1,38 +1,43 @@
 {
-  "Basicmon": {
-    "name": "Basicmon",
+  "Raptar": {
+    "name": "Raptar",
+    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/basicmon.gif?alt=media&token=1a1105aa-6c40-4db1-9bb8-123c8462f591",
     "max_health": "50",
     "health": 50,
     "damage": 15,
     "statusEffects": "",
     "experience": 50
   },
-  "Basicmon1": {
-    "name": "Basicmon1",
+  "Raptar": {
+    "name": "Raptar",
+    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/basicmon.gif?alt=media&token=1a1105aa-6c40-4db1-9bb8-123c8462f591",
     "max_health": "50",
     "health": 50,
     "damage": 15,
     "statusEffects": "",
     "experience": 50
   },
-  "Pumpkino123": {
-    "name": "Pumpkino123",
+  "Tortle": {
+    "name": "Tortle",
+    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/sprite%20front%20STICKER-source.gif?alt=media&token=a4e6e9e5-5503-4dd9-aa09-e40736b7d41c",
     "max_health": 20,
     "health": 20,
     "damage": 50,
     "statusEffects": "",
     "experience": 100
   },
-  "Pumpkino": {
-    "name": "Pumpkino",
+  "Venus": {
+    "name": "Venus",
     "max_health": 20,
+    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/monster2.gif?alt=media&token=4404048e-d4a6-43ed-90c1-78e2b0bc9a3f",
     "health": 20,
     "damage": 50,
     "statusEffects": "",
     "experience": 100
   },
-  "Reaper": {
+  "FINAL BOSS: Reaper": {
     "name": "Reaper",
+    "image": "https://firebasestorage.googleapis.com/v0/b/monster-hunter-cb36c.appspot.com/o/finalboss1.gif?alt=media&token=e31cd6ac-9fcb-4a11-a221-c3ca7747cbfb",
     "max_health": 100,
     "health": 100,
     "damage": 100,

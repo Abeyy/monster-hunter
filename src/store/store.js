@@ -15,6 +15,7 @@ const store = new Vuex.Store({
 
     //Current monster
     current_monster_name: '',
+    current_monster_image: '',
     current_monster_health: undefined,
     current_monster_max_health: undefined,
     current_monster_status: 'alive',
@@ -58,7 +59,7 @@ const store = new Vuex.Store({
     },
     giveExp: (state, exp) => {
       if (state.exp + exp > state.max_exp) {
-        //TODO: The below is broken! 
+        //TODO: The below is broken!
         state.exp = (state.exp + exp) - state.max_exp
         state.level += 1
         state.power += 5
@@ -66,10 +67,12 @@ const store = new Vuex.Store({
       } else {
         state.exp = state.exp + exp
       }
-
     },
     set_current_monster_name: (state, name) => {
       state.current_monster_name = name
+    },
+    set_current_monster_image: (state, image) => {
+      state.current_monster_image = image
     },
     set_current_monster_health: (state, health) => {
       state.current_monster_health = health
