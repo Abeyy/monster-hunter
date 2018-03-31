@@ -131,6 +131,7 @@ export default {
     color: white;
     margin-left: 60%;
     font-size: 26px;
+    white-space: nowrap;
   }
   .monster button{
     width: 100px;
